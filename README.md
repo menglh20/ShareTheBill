@@ -2,6 +2,8 @@
 
 给留学同居舍友使用的多人记账、分摊和结算网站。前端部署到 **Vercel**，后端部署到 **Railway**。
 
+线上地址：[同一屋檐](https://share-the-bill-lilac.vercel.app)。后端地址：`https://sharethebill-api-production.up.railway.app`。两个平台都关联本仓库的 `main` 分支，推送后自动部署。首次启用前，必须在 Railway 配置下述管理员密码和会话密钥。
+
 ## 本地运行
 
 需要 Node.js 22.16+（建议使用 Node.js 22 LTS）。
@@ -52,6 +54,7 @@ npm start      # 单独启动后端
 | `APP_URL`        | Vercel 正式网址，如 `https://your-project.vercel.app`，无末尾路径 |
 | `DATABASE_PATH`  | `/data/sharethebill.db`（Dockerfile 已设置）                      |
 | `NODE_ENV`       | `production`（Dockerfile 已设置）                                 |
+| `PORT`           | `3001`，与 Railway 公网域名的 Target port 保持一致                |
 
 ```sh
 node -e "console.log(require('node:crypto').randomBytes(32).toString('hex'))"
